@@ -1,0 +1,75 @@
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+c:\users\dante glz\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Patient.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DENTIST.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.APPOINTMENT.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MAIN.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PAYMENT.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.login.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.APPOINTMENT.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DENTIST.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.login.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MAIN.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Patient.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PAYMENT.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.APPOINTMENT.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DENTIST.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.login.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MAIN.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Patient.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PAYMENT.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.APPOINTMENT.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DENTIST.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.login.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MAIN.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Patient.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PAYMENT.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Desktop\WindowsFormsApplication1 - copia - copia\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.APPOINTMENT.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DENTIST.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.login.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MAIN.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Patient.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PAYMENT.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
+C:\Users\Diego\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
