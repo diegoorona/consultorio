@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             persona.Search_Name("PACIENTE", cb_name);
-            persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            //persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
             b_add.Enabled = true;
             b_edit.Enabled = false;
             b_delete.Enabled = false;
@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
             tbName.ResetText();
             dDate.ResetText();
             tbDescription.ResetText();
-            persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            //persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
         }
         private void b_search_MouseHover(object sender, EventArgs e)
         {
@@ -181,8 +181,7 @@ namespace WindowsFormsApplication1
 
         private void APPOINTMENT_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MAIN main = new MAIN();
-            main.Show();
+            
         }
     }
 }

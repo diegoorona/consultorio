@@ -186,6 +186,11 @@ namespace WindowsFormsApplication1
             pb_pat.Width = 43;
         }
 
+        private void MAIN_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.Close();
+        }
+
 
     }
 }
