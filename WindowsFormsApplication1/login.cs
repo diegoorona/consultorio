@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
 {
     public partial class login : Form
     {
+        Persona_BD persona = new Persona_BD();
         public login()
         {
             InitializeComponent();
@@ -23,16 +24,21 @@ namespace WindowsFormsApplication1
             button1.FlatAppearance.BorderSize = 0;
             button1.BackColor = Color.FromArgb(0,0,255);
             button1.ForeColor = Color.White;
-
-
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form f = new MAIN();
-            f.Show();
-            this.Hide();
+            string nombre = persona.Access(tbUsuario.Text, tbContra.Text);
+            if (nombre != "")
+            {
+                User.NameOfUser = nombre;
+                Form f = new MAIN();
+                f.Show();
+                this.Hide();
+            }
+            else
+                MessageBox.Show("El usuario o contraseña no existen o no corresponden.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
 
         }
 

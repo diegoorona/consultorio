@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
             b_app.FlatAppearance.BorderSize = 0;
             b_app.BackColor = Color.Blue;
             b_app.ForeColor = Color.White;
+            toolStripMenuItem1.Text = User.NameOfUser;
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,7 +29,13 @@ namespace WindowsFormsApplication1
 
         private void MAIN_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //if (User.LogOut == 0)
+               Application.Exit();
+            //else
+            //{
+            //    login log = new login();
+             //   log.Show();
+            //}
         }
 
         private void b_Click(object sender, EventArgs e)

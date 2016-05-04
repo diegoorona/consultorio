@@ -17,8 +17,9 @@ namespace WindowsFormsApplication1
         public APPOINTMENT()
         {
             InitializeComponent();
+            toolStripMenuItem1.Text = User.NameOfUser;
             persona.Search_Name("PACIENTE", cb_name);
-            //persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
             b_add.Enabled = true;
             b_edit.Enabled = false;
             b_delete.Enabled = false;
@@ -49,7 +50,7 @@ namespace WindowsFormsApplication1
             tbName.ResetText();
             dDate.ResetText();
             tbDescription.ResetText();
-            //persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
         }
         private void b_search_MouseHover(object sender, EventArgs e)
         {
@@ -177,11 +178,19 @@ namespace WindowsFormsApplication1
         private void hOMEToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
         }
 
         private void APPOINTMENT_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //User.LogOut++;
+            this.Close();
+            //ParentForm.Close();
         }
     }
 }

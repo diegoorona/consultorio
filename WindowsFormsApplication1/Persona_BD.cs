@@ -234,5 +234,41 @@ namespace WindowsFormsApplication1
                 flag = false;
             return flag;
         }
+        public string Access(String User, String Psw)
+        {
+            try
+            {
+                string nombre = "";
+                CX = new SqlConnection(cc);
+                cad = "select NOMBRE from DENTISTA where USUARIO = '" + User + "' AND PSW='" + Psw + "'";
+                da = new SqlDataAdapter(cad, CX);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    nombre = dt.Rows[0][0].ToString();
+                }
+                else
+                {
+                    cad = "select NOMBRE from SECRETARIA where USUARIO = '" + User + "' AND PSW='" + Psw + "'";
+                    da = null;
+                    dt = null;
+                    da = new SqlDataAdapter(cad, CX);
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count != 0)
+                    {
+                        nombre = dt.Rows[0][0].ToString();
+                    }
+                }
+                CX.Close();
+                return nombre;
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show(err.Message);
+                return "";
+            }
+        }
     }
 }

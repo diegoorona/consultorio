@@ -91,6 +91,7 @@
     <Compile Include="SECRETARY.Designer.cs">
       <DependentUpon>SECRETARY.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="APPOINTMENT.resx">
       <DependentUpon>APPOINTMENT.cs</DependentUpon>
     </EmbeddedResource>
