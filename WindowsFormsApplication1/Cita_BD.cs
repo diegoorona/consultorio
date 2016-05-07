@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         SqlDataAdapter da;
         SqlCommand con;
         DataTable dt;
-
+        //Search_Appointment
         public void Search_Appointment(ComboBox cb_name)
         {
             try
