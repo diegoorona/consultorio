@@ -1139,4 +1139,21 @@
         RK5CYII=
 </value>
   </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="logOutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAd5JREFUOE9dU9sKqUEY/cupEDnkAbZnkEewHwLlhjtuHPImXMiNEimSQ3EnNw4X
+        ygUvQBTlxvnw7b0WYx9WTTPrW2vNzD8zvya/cb/f5fF4YMgxUK/XRdM0aTQa5NBfr5fcbjf2aBqK1+uV
+        BvTP55PjeDzOcCKRIIdZ6chgEU2ZFdQOstksw5lMhhxhBUzClT9cxuOx6PV6yeVy5Aj9Hc7n82IwGGQ0
+        GpF/w71eT8xmM82VSoViOp0mT6VS5OVymRy+fr/Pmrbf78Xr/UEhEomwCCSTSdbQK4TDYda8Xq8gp5VK
+        JRYsFsvH8katVhObzSbVapVcfbPVaqWfuUAgQFIoFCjiKk6nE8er1ep7+ufzmX2xWKQ/EPiJXuNBzOdz
+        isp0uVy+wePx+L3/2WwmOp2OEzCMNplMKGJ7CKrHgMlwfeDAdDpVQdF8Ph8H3W6XIsxYRQWxOrj6FPjg
+        9/v9oqlniKaAAMz/BwHlZW69XvNUUQiFQh/LH6hTBoLBIH12u102m837kQwGA3E4HBTcbre0Wi3Z7XZy
+        OBx4n81m86s7nU4ZDoecjD8GsFgsxOVy0aCax+P5h0NfLpf0I8cfQ20NW2m32xKNRsVkMjFgNBolFotJ
+        p9OR7XZL3/tAX/ILwX3LEjrw7yYAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

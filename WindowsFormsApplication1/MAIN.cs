@@ -20,28 +20,39 @@ namespace WindowsFormsApplication1
             b_app.BackColor = Color.Blue;
             b_app.ForeColor = Color.White;
             toolStripMenuItem1.Text = User.NameOfUser;
+            if (User.TypeOfUser == "DENTIST")
+                b_app.Enabled = false;
+            else
+            {
+                b_dent.Enabled = false;
+                b_sec.Enabled = false;
+                b_pati.Enabled = false;
+            }
+
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            User.LogOut++;
+            this.Close();
         }
 
         private void MAIN_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //if (User.LogOut == 0)
+            if (User.LogOut == 0)
                Application.Exit();
-            //else
-            //{
-            //    login log = new login();
-             //   log.Show();
-            //}
+            else
+            {
+                login log = new login();
+                log.Show();
+            }
         }
 
         private void b_Click(object sender, EventArgs e)
         {
             Form apo = new APPOINTMENT();
             apo.Show();
+            User.main.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -53,24 +64,28 @@ namespace WindowsFormsApplication1
         {
             Form sec = new SECRETARY();
             sec.Show();
+            User.main.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form den = new DENTIST();
             den.Show();
+            User.main.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form pat = new Patient();
             pat.Show();
+            User.main.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form pay = new PAYMENT();
             pay.Show();
+            User.main.Hide();
         }
 
         private void b_app_MouseHover(object sender, EventArgs e)

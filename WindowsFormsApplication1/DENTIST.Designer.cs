@@ -60,10 +60,15 @@
             this.b_search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.hOMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -88,7 +93,7 @@
             this.groupBox2.Controls.Add(this.tb_name);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 120);
+            this.groupBox2.Location = new System.Drawing.Point(12, 136);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(739, 398);
             this.groupBox2.TabIndex = 3;
@@ -107,6 +112,7 @@
             this.b_delete.TabIndex = 33;
             this.b_delete.Text = "DELETE DENTIST";
             this.b_delete.UseVisualStyleBackColor = false;
+            this.b_delete.Click += new System.EventHandler(this.b_delete_Click);
             this.b_delete.MouseLeave += new System.EventHandler(this.b_delete_MouseLeave);
             this.b_delete.MouseHover += new System.EventHandler(this.b_delete_MouseHover);
             // 
@@ -186,6 +192,7 @@
             this.b_edit.TabIndex = 32;
             this.b_edit.Text = "EDIT DENTIST";
             this.b_edit.UseVisualStyleBackColor = false;
+            this.b_edit.Click += new System.EventHandler(this.b_edit_Click_1);
             this.b_edit.MouseLeave += new System.EventHandler(this.b_edit_MouseLeave);
             this.b_edit.MouseHover += new System.EventHandler(this.b_edit_MouseHover);
             // 
@@ -209,6 +216,7 @@
             this.b_add.TabIndex = 31;
             this.b_add.Text = "ADD DENTIST";
             this.b_add.UseVisualStyleBackColor = false;
+            this.b_add.Click += new System.EventHandler(this.b_add_Click);
             this.b_add.MouseLeave += new System.EventHandler(this.b_add_MouseLeave);
             this.b_add.MouseHover += new System.EventHandler(this.b_add_MouseHover);
             // 
@@ -339,7 +347,7 @@
             this.groupBox1.Controls.Add(this.b_search);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(208, 25);
+            this.groupBox1.Location = new System.Drawing.Point(208, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 66);
             this.groupBox1.TabIndex = 2;
@@ -354,6 +362,7 @@
             this.cb_name.Name = "cb_name";
             this.cb_name.Size = new System.Drawing.Size(311, 24);
             this.cb_name.TabIndex = 20;
+            this.cb_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_name_KeyDown);
             // 
             // b_search
             // 
@@ -368,6 +377,7 @@
             this.b_search.Size = new System.Drawing.Size(35, 29);
             this.b_search.TabIndex = 2;
             this.b_search.UseVisualStyleBackColor = false;
+            this.b_search.Click += new System.EventHandler(this.b_search_Click);
             this.b_search.MouseLeave += new System.EventHandler(this.b_search_MouseLeave);
             this.b_search.MouseHover += new System.EventHandler(this.b_search_MouseHover);
             // 
@@ -384,24 +394,71 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 25);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 41);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(182, 66);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Blue;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hOMEToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(763, 24);
+            this.menuStrip1.TabIndex = 26;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // hOMEToolStripMenuItem
+            // 
+            this.hOMEToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hOMEToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.hOMEToolStripMenuItem.Name = "hOMEToolStripMenuItem";
+            this.hOMEToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.hOMEToolStripMenuItem.Text = "HOME";
+            this.hOMEToolStripMenuItem.Click += new System.EventHandler(this.hOMEToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Yellow;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(107, 20);
+            this.toolStripMenuItem1.Text = "User´s Name:";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
+            this.logOutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("logOutToolStripMenuItem.Image")));
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
             // DENTIST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(763, 526);
+            this.ClientSize = new System.Drawing.Size(763, 542);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "DENTIST";
             this.Text = "DENTIST";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DENTIST_FormClosing);
+            this.Load += new System.EventHandler(this.DENTIST_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -409,7 +466,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -446,5 +506,9 @@
         private System.Windows.Forms.Button b_delete;
         private System.Windows.Forms.Button b_edit;
         private System.Windows.Forms.Button b_add;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem hOMEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }

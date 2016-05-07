@@ -364,6 +364,8 @@
             this.cb_name.Name = "cb_name";
             this.cb_name.Size = new System.Drawing.Size(302, 23);
             this.cb_name.TabIndex = 3;
+            this.cb_name.Enter += new System.EventHandler(this.cb_name_Enter);
+            this.cb_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_name_KeyDown);
             // 
             // label1
             // 
@@ -408,13 +410,14 @@
             this.toolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripMenuItem1.Size = new System.Drawing.Size(107, 20);
             this.toolStripMenuItem1.Text = "User´s Name:";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.logOutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("logOutToolStripMenuItem.Image")));
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
@@ -431,6 +434,7 @@
             this.Name = "APPOINTMENT";
             this.Text = "APPOINTMENT";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.APPOINTMENT_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.APPOINTMENT_FormClosed);
             this.Load += new System.EventHandler(this.APPOINTMENT_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

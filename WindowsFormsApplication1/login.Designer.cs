@@ -77,6 +77,7 @@
             this.tbContra.Name = "tbContra";
             this.tbContra.Size = new System.Drawing.Size(141, 21);
             this.tbContra.TabIndex = 4;
+            this.tbContra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbContra_KeyDown);
             // 
             // label2
             // 
@@ -139,6 +140,7 @@
             this.Name = "login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.login_FormClosed);
             this.Load += new System.EventHandler(this.login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

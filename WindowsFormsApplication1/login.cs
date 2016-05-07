@@ -29,11 +29,14 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             string nombre = persona.Access(tbUsuario.Text, tbContra.Text);
-            if (nombre != "")
+            string tipo = persona.TypeOfUser(tbUsuario.Text, tbContra.Text);
+            if (nombre != "" && tipo != "")
             {
                 User.NameOfUser = nombre;
-                Form f = new MAIN();
-                f.Show();
+                User.TypeOfUser = tipo;
+                User.main = new MAIN();
+                User.main.Show();
+                User.LogOut = 0;
                 this.Hide();
             }
             else
@@ -73,6 +76,19 @@ namespace WindowsFormsApplication1
         {
             --b_help.Width;
             --b_help.Height;
+        }
+
+        private void login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tbContra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
         }
 
 

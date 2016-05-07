@@ -19,7 +19,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             toolStripMenuItem1.Text = User.NameOfUser;
             persona.Search_Name("PACIENTE", cb_name);
-            persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            persona.Searh_ID("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            groupBox2.Enabled = false;
             b_add.Enabled = true;
             b_edit.Enabled = false;
             b_delete.Enabled = false;
@@ -50,7 +51,7 @@ namespace WindowsFormsApplication1
             tbName.ResetText();
             dDate.ResetText();
             tbDescription.ResetText();
-            persona.Search_Persona("SECRETARIA", toolStripMenuItem1.Text, lSecre);
+            persona.Searh_ID("SECRETARIA", toolStripMenuItem1.Text, lSecre);
         }
         private void b_search_MouseHover(object sender, EventArgs e)
         {
@@ -113,11 +114,18 @@ namespace WindowsFormsApplication1
 
         private void b_search_Click(object sender, EventArgs e)
         {
-            dgvAppoints.Rows.Clear();
+            Clear_Form();
 
-            persona.Search_Persona("PACIENTE", cb_name.Text, lPatient);
+            persona.Searh_ID("PACIENTE", cb_name.Text, lPatient);
+
+            if (lPatient.Text != "") 
+            {
+                groupBox2.Enabled = true;
+                tbName.Text = cb_name.Text;
+            }
+                
             cita.Search_Appointments(dgvAppoints, cb_name.Text);
-            tbName.Text = cb_name.Text;
+           
         }
 
         private void dgvAppoints_MouseClick(object sender, MouseEventArgs e)
@@ -138,31 +146,103 @@ namespace WindowsFormsApplication1
 
         private void b_add_Click(object sender, EventArgs e)
         {
-            cita.INSERT_Appointment(lSecre.Text, lPatient.Text, dDate.Text, tbDescription.Text);
+            try
+            {
+                if (cita.Vacio_Appointment(lSecre.Text, lPatient.Text, tbName.Text, dDate.Text, 
+                                           tbDescription.Text))
+                {
+                    cita.INSERT_Appointment(lSecre.Text, lPatient.Text, dDate.Text, tbDescription.Text);
 
-            Clear_Form();
+                    Clear_Form();
+
+                    groupBox2.Enabled = false;
+
+                    MessageBox.Show("AN APPOINTMENT HAS BEEN SUCCESSFULLY INSERTED.");
+                }
+                else
+                    MessageBox.Show("YOU MUST FILL ALL THE BLANK SPACES.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
         }
 
         private void b_edit_Click(object sender, EventArgs e)
         {
-            cita.UPDATE_Appointment(lAppoint.Text, lSecre.Text, lPatient.Text, dDate.Text, tbDescription.Text);
+            try
+            {
+                if (cita.Vacio_Appointment(lSecre.Text, lPatient.Text, tbName.Text, dDate.Text,
+                                           tbDescription.Text))
+                {
+                    if(cita.UPDATE_Appointment(lAppoint.Text, lSecre.Text, lPatient.Text, dDate.Text, tbDescription.Text))
+                    {
+                        Clear_Form();
 
-            Clear_Form();
+                        b_add.Enabled = true;
+                        b_edit.Enabled = false;
+                        b_delete.Enabled = false;
+                        groupBox2.Enabled = false;
 
-            b_add.Enabled = true;
-            b_edit.Enabled = false;
-            b_delete.Enabled = false;
+                        MessageBox.Show("AN APPOINTMENT HAS BEEN SUCCESSFULLY UPDATED.");
+                    }
+                    else
+                    {
+                        Clear_Form();
+
+                        b_add.Enabled = true;
+                        b_edit.Enabled = false;
+                        b_delete.Enabled = false;
+                        groupBox2.Enabled = false;
+                    }
+
+                }
+                else
+                    MessageBox.Show("YOU MUST FILL ALL THE BLANK SPACES.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void b_delete_Click(object sender, EventArgs e)
         {
-            cita.DEL_Appointment(lAppoint.Text);
+            try
+            {
+                if (cita.Vacio_Appointment(lSecre.Text, lPatient.Text, tbName.Text, dDate.Text,
+                                           tbDescription.Text))
+                {
+                    if(cita.DEL_Appointment(lAppoint.Text))
+                    {
+                        Clear_Form();
 
-            Clear_Form();
+                        b_add.Enabled = true;
+                        b_edit.Enabled = false;
+                        b_delete.Enabled = false;
+                        groupBox2.Enabled = false;
 
-            b_add.Enabled = true;
-            b_edit.Enabled = false;
-            b_delete.Enabled = false;
+                        MessageBox.Show("AN APPOINTMENT HAS BEEN SUCCESSFULLY DELETED.");
+                    }
+                    else
+                    {
+                        Clear_Form();
+
+                        b_add.Enabled = true;
+                        b_edit.Enabled = false;
+                        b_delete.Enabled = false;
+                        groupBox2.Enabled = false;
+                    }
+                }
+                else
+                    MessageBox.Show("YOU MUST FILL ALL THE BLANK SPACES.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvAppoints_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -183,14 +263,40 @@ namespace WindowsFormsApplication1
 
         private void APPOINTMENT_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            if (User.LogOut == 0)
+                User.main.Show();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //User.LogOut++;
+            User.LogOut++;
+            User.main.Close();
+            User.main.Dispose();
             this.Close();
-            //ParentForm.Close();
+            this.Dispose();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_name_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cb_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                b_search_Click(sender, e);
+            }
+        }
+
+        private void APPOINTMENT_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
         }
     }
 }

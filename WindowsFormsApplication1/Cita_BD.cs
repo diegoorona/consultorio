@@ -93,34 +93,43 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(ex.Message);
             }
         }
-        public void UPDATE_Appointment(String id_appoint, String id_secre, String id_patient, String date,
+        public bool UPDATE_Appointment(String id_appoint, String id_secre, String id_patient, String date,
                                  String description)
         {
             try
             {
-                String head = "";
-                head = "UPDATE CITA SET FECHA = '" + date + "', ";
-                CX = new SqlConnection(cc);
-                cad = head +
-                        "DESCRIPCION = '" + description + "'"+
-                       " WHERE ID_CITAS = " + id_appoint;
-                con = new SqlCommand(cad, CX);
-                CX.Open();
-                con.ExecuteNonQuery();
-                CX.Close();
+                var result = MessageBox.Show("UPDATE CITA WITH ID = " + id_appoint
+                    , "CONFIRMATION", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    String head = "";
+                    head = "UPDATE CITA SET FECHA = '" + date + "', ";
+                    CX = new SqlConnection(cc);
+                    cad = head +
+                            "DESCRIPCION = '" + description + "'" +
+                           " WHERE ID_CITAS = " + id_appoint;
+                    con = new SqlCommand(cad, CX);
+                    CX.Open();
+                    con.ExecuteNonQuery();
+                    CX.Close();
+                    return true;
+                }
+                else
+                    return false;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
-        public void DEL_Appointment(String ID)
+        public bool DEL_Appointment(String ID)
         {
             try
             {
                 var result = MessageBox.Show("DELETE CITA WITH ID = " + ID
-                    , "CONFIRMATION", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
+                    , "CONFIRMATION", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
                     CX = new SqlConnection(cc);
                     cad = "DELETE CITA WHERE ID_CITAS = " + ID;
@@ -128,27 +137,25 @@ namespace WindowsFormsApplication1
                     CX.Open();
                     con.ExecuteNonQuery();
                     CX.Close();
+                    return true;
                 }
+                else
+                    return false;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
-        public bool Vacio_Person(String Person, String id_card, String name, String gender, String date,
-                                 String address, String phone, String email)
+        public bool Vacio_Appointment(String secretary, String patient, String name, String date,
+                                 String description)
         {
             bool flag = false;
-            if (name != "" && gender != "" && date != "" && address != "" &&
-                phone != "" && email != "")
+            if (secretary != "" && patient != "" && name != "" && date != "" && 
+                description != "")
             {
-                if (Person == "DENTIST")
-                {
-                    if (id_card != "")
-                        flag = true;
-                }
-                else
-                    flag = true;
+                flag = true;
             }
             return flag;
         }

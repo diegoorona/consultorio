@@ -17,7 +17,41 @@ namespace WindowsFormsApplication1
         SqlDataAdapter da;
         SqlCommand con;
         DataTable dt;
-        
+        public string TypeOfUser(String User, String Psw)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "select NOMBRE from DENTISTA where USUARIO = '" + User + "' AND PSW='" + Psw + "'";
+                da = new SqlDataAdapter(cad, CX);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    return "DENTIST";
+                }
+                else
+                {
+                    cad = "select NOMBRE from SECRETARIA where USUARIO = '" + User + "' AND PSW='" + Psw + "'";
+                    da = null;
+                    dt = null;
+                    da = new SqlDataAdapter(cad, CX);
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count != 0)
+                    {
+                        return "SECRETARY";
+                    }
+                }
+                CX.Close();
+                return "";
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show(err.Message);
+                return "";
+            }
+        }
         public string[] Search_ArrayOfNames(string Person)
         {
             try
@@ -57,6 +91,27 @@ namespace WindowsFormsApplication1
                 return new string[0];
             }
         }
+        public void Searh_ID(string Person, string name, Label id)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "select ID_" + Person.ToUpper() + " from " + Person.ToUpper() +
+                    " WHERE NOMBRE = '" + name + "'";
+                da = new SqlDataAdapter(cad, CX);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    id.Text = dt.Rows[0][0].ToString();
+                }
+                CX.Close();
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
         public void Search_Name(string Person, ComboBox cb_name)
         {
             try
@@ -78,18 +133,50 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(err.Message);
             }
         }
-        public void Search_Persona(string Person, String name, Label lID)
+        private void Search_Dentist(DataTable dt, TextBox name, Label id, TextBox cedula, ComboBox sexo,
+                                  DateTimePicker date, TextBox dir, TextBox tel, TextBox email)
+        {
+            id.Text = dt.Rows[0][0].ToString();
+            cedula.Text = dt.Rows[0][1].ToString();
+            name.Text = dt.Rows[0][2].ToString();
+            sexo.Text = dt.Rows[0][3].ToString().Trim();
+            date.Text = Convert.ToDateTime(dt.Rows[0][4]).ToShortDateString();
+            dir.Text = dt.Rows[0][5].ToString();
+            tel.Text = dt.Rows[0][6].ToString();
+            email.Text = dt.Rows[0][7].ToString();
+        }
+        public void Search_Persona(string Person, TextBox name, Label id, TextBox cedula, ComboBox sexo,
+                                    DateTimePicker date, TextBox dir, TextBox tel, TextBox email, string nombre)
         {
             try
             {
+                string query = "SELECT ID_" + Person.ToUpper() + ", NOMBRE, SEXO,NACIMIENTO," +
+                               "DIRECCION,TELEFONO, EMAIL FROM " + Person.ToUpper();
+                if (Person == "DENTISTA")
+                    query = "SELECT ID_" + Person.ToUpper() + ", CEDULA, NOMBRE, SEXO,NACIMIENTO," +
+                               "DIRECCION,TELEFONO, EMAIL FROM " + Person.ToUpper();
                 CX = new SqlConnection(cc);
-                cad = "select * from " + Person.ToUpper()+" where NOMBRE = '"+name+"'";
+                cad = query + " WHERE NOMBRE = '" + nombre + "'";
                 da = new SqlDataAdapter(cad, CX);
                 dt = new DataTable();
                 da.Fill(dt);
                 if (dt.Rows.Count != 0)
                 {
-                    lID.Text = dt.Rows[0][0].ToString();
+                    if (Person == "DENTISTA")
+                    {
+                        this.Search_Dentist(dt, name, id, cedula, sexo, date, dir, tel, email);
+                    }
+                    else
+                    {
+                        id.Text = dt.Rows[0][0].ToString();
+                        name.Text = dt.Rows[0][1].ToString();
+                        sexo.Text = dt.Rows[0][2].ToString().Trim();
+                        date.Text = Convert.ToDateTime(dt.Rows[0][3]).ToShortDateString();
+                        dir.Text = dt.Rows[0][4].ToString();
+                        tel.Text = dt.Rows[0][5].ToString();
+                        email.Text = dt.Rows[0][6].ToString();
+                    }
+
                 }
                 CX.Close();
             }
@@ -104,7 +191,7 @@ namespace WindowsFormsApplication1
             try
             {
                 String head = "";
-                if (Person == "DENTIST")
+                if (Person == "DENTISTA")
                     head = "INSERT INTO " + Person.ToUpper() + " (CEDULA,NOMBRE,SEXO,NACIMIENTO,DIRECCION,TELEFONO,EMAIL)"+
                              "VALUES ( "+id_card+",'";
                 else
@@ -122,6 +209,28 @@ namespace WindowsFormsApplication1
                 con = new SqlCommand(cad, CX);
                 CX.Open();
                 con.ExecuteNonQuery();
+                CX.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Search_USER_PASS(string Person, TextBox user, TextBox pass, TextBox pass2, string id_person)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "SELECT USUARIO, PSW FROM " + Person.ToUpper() + " WHERE ID_" + Person.ToUpper() + " = " + id_person;
+                da = new SqlDataAdapter(cad, CX);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    user.Text = dt.Rows[0][0].ToString();
+                    pass.Text = dt.Rows[0][1].ToString();
+                    pass2.Text = dt.Rows[0][1].ToString();
+                }
                 CX.Close();
             }
             catch (SqlException ex)
