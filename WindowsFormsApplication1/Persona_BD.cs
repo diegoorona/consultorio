@@ -145,6 +145,27 @@ namespace WindowsFormsApplication1
             tel.Text = dt.Rows[0][6].ToString();
             email.Text = dt.Rows[0][7].ToString();
         }
+        public void Search_Dentist_Patient(ComboBox cbName, string id)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "select NOMBRE FROM DENTISTA" +
+                       " where ID_DENTISTA in (select ID_DENTISTA from PACIENTE where ID_PACIENTE = " + id + ")";
+                da = new SqlDataAdapter(cad, CX);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    cbName.Text = dt.Rows[0][0].ToString();
+                }
+                CX.Close();
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
         public void Search_Persona(string Person, TextBox name, Label id, TextBox cedula, ComboBox sexo,
                                     DateTimePicker date, TextBox dir, TextBox tel, TextBox email, string nombre)
         {
@@ -183,6 +204,22 @@ namespace WindowsFormsApplication1
             catch (SqlException err)
             {
                 MessageBox.Show(err.Message);
+            }
+        }
+        public void Dentist_Patient(string id_dentista, string id_paciente)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "UPDATE PACIENTE SET ID_DENTISTA = " + id_dentista + " WHERE ID_PACIENTE = " + id_paciente;
+                con = new SqlCommand(cad, CX);
+                CX.Open();
+                con.ExecuteNonQuery();
+                CX.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         public void INSERT_Person(String Person,String id_card,String name, String gender, String date,

@@ -56,6 +56,8 @@
             this.hOMEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cb_dent = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,6 +76,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cb_dent);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dt_date);
             this.groupBox2.Controls.Add(this.cb_gender);
             this.groupBox2.Controls.Add(this.label8);
@@ -354,17 +358,37 @@
             this.logOutToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.logOutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("logOutToolStripMenuItem.Image")));
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // cb_dent
+            // 
+            this.cb_dent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_dent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_dent.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_dent.FormattingEnabled = true;
+            this.cb_dent.Location = new System.Drawing.Point(117, 234);
+            this.cb_dent.Name = "cb_dent";
+            this.cb_dent.Size = new System.Drawing.Size(311, 24);
+            this.cb_dent.TabIndex = 66;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(52, 238);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 15);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "DENTIST:";
             // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(729, 392);
+            this.ClientSize = new System.Drawing.Size(729, 421);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox2);
@@ -414,6 +438,8 @@
         private System.Windows.Forms.ToolStripMenuItem hOMEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cb_dent;
+        private System.Windows.Forms.Label label3;
 
     }
 }

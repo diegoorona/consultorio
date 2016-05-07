@@ -13,11 +13,13 @@ namespace WindowsFormsApplication1
     public partial class Patient : Form
     {
         Persona_BD paciente = new Persona_BD();
+        Label id_dentista = new Label();
         public Patient()
         {
             InitializeComponent();
             toolStripMenuItem1.Text = User.NameOfUser;
             paciente.Search_Name("PACIENTE", cb_name);
+            paciente.Search_Name("DENTISTA", cb_dent);
         }
         private void Autocomplete()
         {
@@ -101,9 +103,14 @@ namespace WindowsFormsApplication1
                 {
                     paciente.Search_Persona("PACIENTE", tb_name, l_idDent, null, cb_gender,
                                             dt_date, tb_address, tb_phone, tb_email, cb_name.Text);
-                    cb_name.Items.Clear();
 
+                    cb_name.Items.Clear();
+                    cb_dent.Items.Clear();
+
+                    paciente.Search_Dentist_Patient(cb_dent, l_idDent.Text);
+                    paciente.Search_Name("DENTISTA", cb_dent);
                     paciente.Search_Name("PACIENTE", cb_name);
+                    
                 }
                 else
                     MessageBox.Show("YOU MUST SELECT A NAME.");
@@ -123,10 +130,15 @@ namespace WindowsFormsApplication1
                         dt_date.Value.ToShortDateString(), tb_address.Text, tb_phone.Text, tb_email.Text);
 
                     paciente.Searh_ID("PACIENTE", tb_name.Text, l_idDent);
+                    paciente.Searh_ID("DENTISTA", cb_dent.Text, id_dentista);
+
+                    paciente.Dentist_Patient(id_dentista.Text, l_idDent.Text);
 
                     cb_name.Items.Clear();
+                    cb_dent.Items.Clear();
 
                     paciente.Search_Name("PACIENTE", cb_name);
+                    paciente.Search_Name("DENTISTA", cb_dent);
 
                     Autocomplete();
 
@@ -153,9 +165,15 @@ namespace WindowsFormsApplication1
                     paciente.UPDATE_Person("PACIENTE", "", tb_name.Text, cb_gender.Text,
                         dt_date.Value.ToShortDateString(), tb_address.Text, tb_phone.Text, tb_email.Text, l_idDent.Text);
 
+                    paciente.Searh_ID("DENTISTA", cb_dent.Text, id_dentista);
+
+                    paciente.Dentist_Patient(id_dentista.Text, l_idDent.Text);
+                    
                     cb_name.Items.Clear();
+                    cb_dent.Items.Clear();
 
                     paciente.Search_Name("PACIENTE", cb_name);
+                    paciente.Search_Name("DENTISTA", cb_dent);
 
                     Autocomplete();
 
@@ -181,8 +199,10 @@ namespace WindowsFormsApplication1
                     paciente.DEL_Person(l_idDent.Text, "PACIENTE");
                     
                     cb_name.Items.Clear();
+                    cb_dent.Items.Clear();
 
                     paciente.Search_Name("PACIENTE", cb_name);
+                    paciente.Search_Name("DENTISTA", cb_dent);
 
                     Autocomplete();
 
