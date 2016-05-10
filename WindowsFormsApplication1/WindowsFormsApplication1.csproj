@@ -70,6 +70,7 @@
     <Compile Include="MAIN.Designer.cs">
       <DependentUpon>MAIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pago_BD.cs" />
     <Compile Include="Patient.cs">
       <SubType>Form</SubType>
     </Compile>
