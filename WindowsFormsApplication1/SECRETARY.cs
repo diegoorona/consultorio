@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
     public partial class SECRETARY : Form
     {
         Persona_BD secretaria = new Persona_BD();
+        string id_destista_insert = "";
+        string id_destista_delete = "";
         public SECRETARY()
         {
             InitializeComponent();
@@ -127,6 +129,9 @@ namespace WindowsFormsApplication1
                     secretaria.Search_USER_PASS("SECRETARIA", tb_user, tb_pass, tb_confirm, l_idDent.Text);
                     cb_name.Items.Clear();
                     secretaria.Search_Name("SECRETARIA", cb_name);
+
+                    //LISTA DE DENTISTAS
+                    secretaria.DentistList(dgvSec, "SECRETARIA", l_idDent.Text);
                 }
                 else
                     MessageBox.Show("YOU MUST SELECT A NAME.");
@@ -234,6 +239,7 @@ namespace WindowsFormsApplication1
         private void SECRETARY_Load(object sender, EventArgs e)
         {
             Autocomplete();
+            secretaria.DentistList(dgvDent, "DENTISTA", "");
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,16 +273,61 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int cont =0;
-            CheckBox chb = new CheckBox();
-            for (int i = 0; i < dgvSec.RowCount; i++)
+            try
             {
-                if (dgvSec[0,i].Value.Equals(true))
+                secretaria.Searh_ID("SECRETARIA", cb_name.Text, l_idDent);
+                if (l_idDent.Text != "" && id_destista_insert != "")
                 {
-                    cont++;
+                    secretaria.INSERT_DENTIST_SERETARY(id_destista_insert, l_idDent.Text);
+                    secretaria.DentistList(dgvSec, "SECRETARIA", l_idDent.Text);
                 }
+                else
+                    MessageBox.Show("YOU MUST SELECT A SECRETARY NAME AND A DENTIST NAME.");
             }
-            MessageBox.Show(cont.ToString());
+            catch( Exception ex)
+            { MessageBox.Show(ex.Message); }
+        }
+
+        private void dgvDent_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                id_destista_insert = dgvDent[0, e.RowIndex].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                secretaria.Searh_ID("SECRETARIA", cb_name.Text, l_idDent);
+                if (l_idDent.Text != "" && id_destista_delete != "")
+                {
+                    secretaria.DELETE_DENTIST_SERETARY(id_destista_delete, l_idDent.Text);
+                    dgvSec.Rows.Clear();
+                    secretaria.DentistList(dgvSec, "SECRETARIA", l_idDent.Text);
+                }
+                else
+                    MessageBox.Show("YOU MUST SELECT A SECRETARY NAME AND A DENTIST NAME.");
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
+        }
+
+        private void dgvSec_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                id_destista_delete = dgvDent[0, e.RowIndex].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

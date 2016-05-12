@@ -416,5 +416,79 @@ namespace WindowsFormsApplication1
                 return "";
             }
         }
+
+        public void DentistList(DataGridView dgv, string Person, string id)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                if(Person == "DENTISTA")
+                    cad = "SELECT ID_DENTISTA, NOMBRE FROM DENTISTA";       
+                else if (Person == "SECRETARIA")
+                    cad = "SELECT ID_DENTISTA,NOMBRE FROM DENTISTA "+
+                          "WHERE ID_DENTISTA IN (SELECT ID_DENTISTA FROM DENTISTA_SECRETARIA "+
+					      "WHERE ID_SECRETARIA = "+id+")";
+                da = new SqlDataAdapter(cad, CX);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    dgv.Rows.Clear();
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        dgv.Rows.Add();
+                        dgv[0, i].Value = dt.Rows[i][0].ToString();
+                        dgv[1, i].Value = dt.Rows[i][1].ToString();
+                    }
+                }
+                CX.Close();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void INSERT_DENTIST_SERETARY(string ID_DENTISTA, string ID_SECRETARIA)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "INSERT INTO DENTISTA_SECRETARIA VALUES ("+ID_DENTISTA+","+ID_SECRETARIA+")";
+                con = new SqlCommand(cad, CX);
+                CX.Open();
+                con.ExecuteNonQuery();
+                CX.Close();
+                MessageBox.Show("A DENTISTS SECRETARY RELATION HAS BEEN INSERTED.");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void DELETE_DENTIST_SERETARY(string ID_DENTISTA, string ID_SECRETARIA)
+        {
+            try
+            {
+                CX = new SqlConnection(cc);
+                cad = "DELETE DENTISTA_SECRETARIA WHERE ID_DENTISTA = " + ID_DENTISTA + " AND ID_SECRETARIA = " + ID_SECRETARIA ;
+                var result = MessageBox.Show("YOU ARE ABOUT TO DELETE THIS RELATION"
+                                            , "CONFIRMATION", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    con = new SqlCommand(cad, CX);
+                    CX.Open();
+                    con.ExecuteNonQuery();
+                    CX.Close();
+
+                    MessageBox.Show("A DENTISTS SECRETARY RELATION HAS BEEN DELETED.");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
