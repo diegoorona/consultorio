@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
 {
     class Persona_BD
     {
-        string cc = "Data Source=Diego-PC;Initial Catalog=Consultorio_Dental;Integrated Security=True";
+        string cc = User.cad;
         SqlConnection CX;
         string cad;
         SqlDataAdapter da;

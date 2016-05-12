@@ -264,5 +264,21 @@ namespace WindowsFormsApplication1
                 b_search_Click_1(sender, e);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int cont =0;
+            CheckBox chb = new CheckBox();
+            for (int i = 0; i < dgvSec.RowCount; i++)
+            {
+                if (dgvSec[0,i].Value.Equals(true))
+                {
+                    cont++;
+                }
+            }
+            MessageBox.Show(cont.ToString());
+        }
+
+
     }
 }
