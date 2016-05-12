@@ -88,6 +88,7 @@ C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debu
 C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
 C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
@@ -103,3 +104,4 @@ C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsForm
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+
