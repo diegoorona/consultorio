@@ -57,7 +57,9 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+            Form rec = new RECORDS();
+            rec.Show();
+            User.main.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)

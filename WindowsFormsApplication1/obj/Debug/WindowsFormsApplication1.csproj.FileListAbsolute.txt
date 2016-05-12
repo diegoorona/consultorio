@@ -88,3 +88,4 @@ C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debu
 C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
 C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Diego\Desktop\Consultorio\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.RECORDS.resources
