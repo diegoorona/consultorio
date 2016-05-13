@@ -104,3 +104,4 @@ C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsForm
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.RECORDS.resources
+C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
