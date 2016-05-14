@@ -97,6 +97,7 @@
     <Compile Include="RECORDS.Designer.cs">
       <DependentUpon>RECORDS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Record_BD.cs" />
     <Compile Include="SECRETARY.cs">
       <SubType>Form</SubType>
     </Compile>

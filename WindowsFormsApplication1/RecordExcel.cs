@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
             hoja_trabajo = (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
             Microsoft.Office.Interop.Excel.Range Rango;
 
-
+            hoja_trabajo.Cells[5, 8] = System.DateTime.Now.ToString("dd/MM/yyyy"); ;
             hoja_trabajo.Cells[6, 2] = "BAJO TRATAMIENTO:"; 
             hoja_trabajo.Cells[6, 4] = "TOMA MEDICAMENTO:";  hoja_trabajo.Cells[6, 6] = "ESPECIFIQUE:";
             /*     COLUMNA IZQUIERDA    */
