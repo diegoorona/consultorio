@@ -32,68 +32,103 @@ namespace WindowsFormsApplication1
             libros_trabajo = null;
             hoja_trabajo = null;
         }
-        public void ReporteExcel(int n, string name, DataGridView dgv, string from, string to, SaveFileDialog file)
+        public void ReporteExcel(string name_pat,string name_dent, string image, string from, string to, SaveFileDialog file)
         {
-            int suma = 10;
             aplicacion = new Microsoft.Office.Interop.Excel.Application();
             aplicacion.DisplayAlerts = false;
             libros_trabajo = aplicacion.Workbooks.Add();
             hoja_trabajo = (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
             Microsoft.Office.Interop.Excel.Range Rango;
 
-            /*for (int i = 0; i < n; i++)
-            {
-                //hoja_trabajo.Cells[9, i + 2] = dgv.Columns[i].HeaderText.ToString().ToUpper();
-                hoja_trabajo.Cells[9, i + 2] = "HOLA MUNDO";
-            }
 
-            for (int i = 0; i < dgv.Rows.Count; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    hoja_trabajo.Cells[i + 10, j + 2] = dgv.Rows[i].Cells[j].Value.ToString();
-                }
-            }*/
-            hoja_trabajo.Cells[9, 2] = "HOLA MUNDO";
-            hoja_trabajo.get_Range("c1", to + "3").Merge(false);
-            Rango = hoja_trabajo.get_Range("c1", to + "3");
-            this.Rango(hoja_trabajo, Rango, "c1", to + "3", 15, System.Drawing.Color.White, false);
-            Rango.FormulaR1C1 = "Si Capital \n Reporte de " + name;
+            hoja_trabajo.Cells[6, 2] = "BAJO TRATAMIENTO:"; 
+            hoja_trabajo.Cells[6, 4] = "TOMA MEDICAMENTO:";  hoja_trabajo.Cells[6, 6] = "ESPECIFIQUE:";
+            /*     COLUMNA IZQUIERDA    */
+            hoja_trabajo.Cells[8,2] = "EXAMEN DE TEJIDOS";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[9,2] = "DUROS";
+            hoja_trabajo.Cells[10, 2] = "ESMALTE:"; hoja_trabajo.Cells[10, 4] = "DENTINA:";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[11, 2] = "RX";
+            hoja_trabajo.Cells[12, 2] = "CARIES INTERPROXIMAL";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[13, 2] = "RAIZ:"; hoja_trabajo.Cells[13, 4] = "HUESOS:";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[14, 2] = "BLANDOS";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[15, 2] = "ENCIA:";                   hoja_trabajo.Cells[15, 4] = "PULPA:";
+            hoja_trabajo.Cells[16, 2] = "INSERCION EPITELIAL:";     hoja_trabajo.Cells[16, 4] = "VELO DEL PALADAR:";
+            hoja_trabajo.Cells[17, 2] = "LENGUA:";                  hoja_trabajo.Cells[17, 4] = "CARRILLOS:";
+            
+            /*     COLUMNA DEBAJO    */
+            hoja_trabajo.Cells[18, 2] = "ANTECEDENTES PERSONALES";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[19, 2] = "ALERGIAS:";
+            hoja_trabajo.Cells[20, 2] = "BUENA HIGIENE BUCAL:";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[21, 2] = "HABITOS";
+            /*---------------------------------------------*/
+            hoja_trabajo.Cells[22, 2] = "BRICOMANIA:";          hoja_trabajo.Cells[22, 4] = "LENGUA:";
+            hoja_trabajo.Cells[23, 2] = "CONT. MUSCULAR:";      hoja_trabajo.Cells[23, 4] = "LABIOS:";
+            hoja_trabajo.Cells[24, 2] = "BUENA ALIMENTACIÓN:";  hoja_trabajo.Cells[24, 4] = "DEDOS:";
+            hoja_trabajo.Cells[25, 2] = "RESP: BUCAL:";         hoja_trabajo.Cells[25, 4] = "HAB. MORDIDA:";
+
+
+            // SECCIÓN DE ENCABEZADO
+            hoja_trabajo.get_Range("b1", to + "3").Merge(false);
+            Rango = hoja_trabajo.get_Range("b1", to + "3");
+            this.Rango(hoja_trabajo, Rango, "b1", to + "3", 15, System.Drawing.Color.White, System.Drawing.Color.Black);
+            Rango.FormulaR1C1 = "                                                      NOMBRE DE PACIENTE: "+name_pat+" \n "+
+                                "                                                     NOMBRE DE DENTISTA: "+name_dent+"";
+            
+
             string x = AppDomain.CurrentDomain.BaseDirectory;
-            hoja_trabajo.Shapes.AddPicture(AppDomain.CurrentDomain.BaseDirectory + "Consultorio_20Dental_20Ixchel_20Logo.png", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 60, 0, 220, 55);
+            hoja_trabajo.Shapes.AddPicture(AppDomain.CurrentDomain.BaseDirectory + "Consultorio_20Dental_20Ixchel_20Logo.png", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 60, 0, 195, 55);
+            hoja_trabajo.Shapes.AddPicture(image, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 550, 100, 250, 250);
+            //COLORES DE FONDO
+            //PIRMER FRANJA
+            this.Rango(hoja_trabajo, Rango, "b5", "h5", 11, System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.White);
+            this.Rango(hoja_trabajo, Rango, "b6", "b6", 11, System.Drawing.Color.FromArgb(217, 217, 217), System.Drawing.Color.Black);
+            this.Rango(hoja_trabajo, Rango, "d6", "d6", 11, System.Drawing.Color.FromArgb(217, 217, 217), System.Drawing.Color.Black);
+            this.Rango(hoja_trabajo, Rango, "f6", "f6", 11, System.Drawing.Color.FromArgb(217, 217, 217), System.Drawing.Color.Black);
+            //Columna Izquierda
+            this.Rango(hoja_trabajo, Rango, "b8", "e8", 11, System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.White);
+            this.Rango(hoja_trabajo, Rango, "b9", "e9", 11, System.Drawing.Color.FromArgb(217, 217, 217), System.Drawing.Color.Black);
 
-            this.Rango(hoja_trabajo, Rango, from + "9", to + "9", 11, System.Drawing.Color.WhiteSmoke, false);
-            this.Rango(hoja_trabajo, Rango, from + "10", to + suma.ToString(), 11, System.Drawing.Color.White, false);
+            this.Rango(hoja_trabajo, Rango, "b11", "e11", 11, System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.White);
+            this.Rango(hoja_trabajo, Rango, "b12", "e12", 11, System.Drawing.Color.FromArgb(217, 217, 217), System.Drawing.Color.Black);
+            this.Rango(hoja_trabajo, Rango, "b14", "e14", 11, System.Drawing.Color.FromArgb(217, 217, 217), System.Drawing.Color.Black);
+
+            //Columna debajo
+            this.Rango(hoja_trabajo, Rango, "b18", "e18", 11, System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.White);
+            this.Rango(hoja_trabajo, Rango, "b21", "e21", 11, System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.White);
+
+            //ULTIMA FRANJA
+            this.Rango(hoja_trabajo, Rango, "b26", "h26", 11, System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.White);
+
+            //TAMAÑO CELDA
+            this.CellSize(hoja_trabajo, Rango, "c1", 5);
+            this.CellSize(hoja_trabajo, Rango, "d1", 21);
+            this.CellSize(hoja_trabajo, Rango, "e1", 5);
+            this.CellSize(hoja_trabajo, Rango, "f1", 21);
+            this.FinalizarArch(file);
         }
 
-        public void Rango(Microsoft.Office.Interop.Excel.Worksheet hoja, Microsoft.Office.Interop.Excel.Range rango, string from, string to, int Size, Color c, bool izq)
+        public void Rango(Microsoft.Office.Interop.Excel.Worksheet hoja, Microsoft.Office.Interop.Excel.Range rango, string from, string to, int Size, Color cFondo, Color fuente)
         {
-            rango = hoja.get_Range(from, to);
-            if (izq != true)
-            {
-                rango.HorizontalAlignment = 3;
-                rango.VerticalAlignment = 3;
-            }
+            rango = hoja.get_Range(from,to);
             if (from != "b10")
                 rango.Font.Bold = true;
             rango.Font.Size = Size;
-            rango.Cells.Interior.Color = System.Drawing.ColorTranslator.ToOle(c);
-            rango.ColumnWidth = 20;
+            rango.Font.Color = fuente;
+            rango.Cells.Interior.Color = System.Drawing.ColorTranslator.ToOle(cFondo);
+            rango.ColumnWidth = 21;
         }
-        public void ConCli(string n1, string n2, string n3, SaveFileDialog file, bool pago)
+
+        public void CellSize(Microsoft.Office.Interop.Excel.Worksheet hoja, Microsoft.Office.Interop.Excel.Range rango, string cell, int tam)
         {
-            Microsoft.Office.Interop.Excel.Range Rango;
-            Rango = hoja_trabajo.get_Range("b6", "g7");
-            hoja_trabajo.Cells[6, 2] = n1;
-            hoja_trabajo.Cells[7, 2] = n2;
-            if (pago == false)
-            {
-                hoja_trabajo.Cells[7, 7] = "Saldo Total: " + n3;
-                this.Rango(hoja_trabajo, Rango, "b5", "g7", 11, System.Drawing.Color.White, true);
-            }
-            else
-                this.Rango(hoja_trabajo, Rango, "b5", "c7", 11, System.Drawing.Color.White, true);
-            this.FinalizarArch(file);
+            rango = hoja.get_Range(cell);
+            rango.ColumnWidth = tam;
         }
 
         public void FinalizarArch(SaveFileDialog file)

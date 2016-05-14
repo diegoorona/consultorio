@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         Microsoft.Office.Interop.Excel.Application aplicacion;
         Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
         Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
+        string sourceFile = "";
         Persona_BD persona = new Persona_BD();
         public RECORDS()
         {
@@ -52,8 +53,7 @@ namespace WindowsFormsApplication1
             if (file.ShowDialog() == DialogResult.OK)
             {
                 RecordExcel r = new RecordExcel(aplicacion, libros_trabajo, hoja_trabajo);
-                r.ReporteExcel(0, "Test", null, "c", "f", file);
-                r.ConCli("RFC del Cliente: ", "Nombre del Cliente: ", "", file, true);
+                r.ReporteExcel("DANTE FELIPE GONZÁLEZ JÁQUEZ", "JUAN PEREZ GARCÍA", sourceFile, "b", "h", file);
             }
         }
 
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
             
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    string sourceFile = ofd.FileName;
+                    sourceFile = ofd.FileName;
                     pb_image.Image = Image.FromFile(sourceFile);
                 }
 
