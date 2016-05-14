@@ -48,13 +48,25 @@ namespace WindowsFormsApplication1
 
         private void b_create_Click(object sender, EventArgs e)
         {
-            SaveFileDialog file = new SaveFileDialog();
-            file.Filter = "Excel (*.xls)|*.xls";
-            if (file.ShowDialog() == DialogResult.OK)
+            if (sourceFile != "")
             {
-                RecordExcel r = new RecordExcel(aplicacion, libros_trabajo, hoja_trabajo);
-                r.ReporteExcel("DANTE FELIPE GONZÁLEZ JÁQUEZ", "JUAN PEREZ GARCÍA", sourceFile, "b", "h", file);
+                string paciente = cb_name.Text;
+                string dentista = l_dentist_name.Text;
+                if (paciente != "" && dentista != "")
+                {
+                    SaveFileDialog file = new SaveFileDialog();
+                    file.Filter = "Excel (*.xls)|*.xls";
+                    if (file.ShowDialog() == DialogResult.OK)
+                    {
+                        RecordExcel r = new RecordExcel(aplicacion, libros_trabajo, hoja_trabajo);
+                        r.ReporteExcel(paciente, dentista, sourceFile, "b", "h", file);
+                    }
+                }
+                else
+                    MessageBox.Show("YOU MUST SELECT A PATIENT´S NAME.");
             }
+            else
+                MessageBox.Show("YOU MUST SELECT AN IMAGE.");
         }
 
 
@@ -98,6 +110,23 @@ namespace WindowsFormsApplication1
         private void b_search_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void RECORDS_Load(object sender, EventArgs e)
+        {
+            persona.Search_Name("PACIENTE", cb_name);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Label id = new Label();
+            string nombre = "";
+            if (cb_name.Text != "")
+            {
+                persona.Searh_ID("PACIENTE", cb_name.Text, id);
+                persona.Search_Dentist_Patient(ref nombre, id.Text);
+                l_dentist_name.Text = nombre;
+            }
         }
 
     }

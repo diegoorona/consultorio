@@ -145,7 +145,7 @@ namespace WindowsFormsApplication1
             tel.Text = dt.Rows[0][6].ToString();
             email.Text = dt.Rows[0][7].ToString();
         }
-        public void Search_Dentist_Patient(ComboBox cbName, string id)
+        public void Search_Dentist_Patient( ref string cbName, string id)
         {
             try
             {
@@ -157,7 +157,7 @@ namespace WindowsFormsApplication1
                 da.Fill(dt);
                 if (dt.Rows.Count != 0)
                 {
-                    cbName.Text = dt.Rows[0][0].ToString();
+                    cbName = dt.Rows[0][0].ToString();
                 }
                 CX.Close();
             }

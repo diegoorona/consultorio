@@ -45,16 +45,17 @@
             this.pb_image = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.b_search = new System.Windows.Forms.Button();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_delete = new System.Windows.Forms.Button();
+            this.b_edit = new System.Windows.Forms.Button();
             this.rb_dentist = new System.Windows.Forms.RadioButton();
             this.rb_patient = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.b_delete = new System.Windows.Forms.Button();
-            this.b_edit = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_search = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,7 +73,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(921, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(950, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,7 +115,7 @@
             this.b_create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_create.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_create.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.b_create.Location = new System.Drawing.Point(298, 107);
+            this.b_create.Location = new System.Drawing.Point(328, 107);
             this.b_create.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.b_create.Name = "b_create";
             this.b_create.Size = new System.Drawing.Size(152, 28);
@@ -176,6 +177,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.l_id_Record);
             this.groupBox1.Controls.Add(this.label4);
@@ -187,7 +189,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 129);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(440, 411);
+            this.groupBox1.Size = new System.Drawing.Size(470, 411);
             this.groupBox1.TabIndex = 66;
             this.groupBox1.TabStop = false;
             // 
@@ -246,11 +248,81 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(456, 129);
+            this.groupBox2.Location = new System.Drawing.Point(485, 129);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(453, 411);
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
+            // 
+            // b_search
+            // 
+            this.b_search.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.b_search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b_search.BackgroundImage")));
+            this.b_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b_search.FlatAppearance.BorderSize = 0;
+            this.b_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.b_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_search.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_search.Location = new System.Drawing.Point(379, 96);
+            this.b_search.Name = "b_search";
+            this.b_search.Size = new System.Drawing.Size(35, 29);
+            this.b_search.TabIndex = 71;
+            this.b_search.UseVisualStyleBackColor = false;
+            this.b_search.Click += new System.EventHandler(this.b_search_Click);
+            // 
+            // dgv
+            // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn1});
+            this.dgv.Location = new System.Drawing.Point(11, 167);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.Size = new System.Drawing.Size(431, 150);
+            this.dgv.TabIndex = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "RECORD\'S ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "PATIENT\'S NAME";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 325;
+            // 
+            // b_delete
+            // 
+            this.b_delete.BackColor = System.Drawing.Color.Blue;
+            this.b_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.b_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_delete.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_delete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.b_delete.Location = new System.Drawing.Point(183, 21);
+            this.b_delete.Name = "b_delete";
+            this.b_delete.Size = new System.Drawing.Size(130, 23);
+            this.b_delete.TabIndex = 69;
+            this.b_delete.Text = "DELETE FILE";
+            this.b_delete.UseVisualStyleBackColor = false;
+            // 
+            // b_edit
+            // 
+            this.b_edit.BackColor = System.Drawing.Color.Blue;
+            this.b_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.b_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_edit.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_edit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.b_edit.Location = new System.Drawing.Point(32, 21);
+            this.b_edit.Name = "b_edit";
+            this.b_edit.Size = new System.Drawing.Size(130, 23);
+            this.b_edit.TabIndex = 68;
+            this.b_edit.Text = "OPEN FILE";
+            this.b_edit.UseVisualStyleBackColor = false;
             // 
             // rb_dentist
             // 
@@ -297,82 +369,28 @@
             this.label8.TabIndex = 64;
             this.label8.Text = "NAME:";
             // 
-            // b_delete
+            // button2
             // 
-            this.b_delete.BackColor = System.Drawing.Color.Blue;
-            this.b_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.b_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_delete.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_delete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.b_delete.Location = new System.Drawing.Point(183, 21);
-            this.b_delete.Name = "b_delete";
-            this.b_delete.Size = new System.Drawing.Size(130, 23);
-            this.b_delete.TabIndex = 69;
-            this.b_delete.Text = "DELETE FILE";
-            this.b_delete.UseVisualStyleBackColor = false;
-            // 
-            // b_edit
-            // 
-            this.b_edit.BackColor = System.Drawing.Color.Blue;
-            this.b_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.b_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_edit.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_edit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.b_edit.Location = new System.Drawing.Point(32, 21);
-            this.b_edit.Name = "b_edit";
-            this.b_edit.Size = new System.Drawing.Size(130, 23);
-            this.b_edit.TabIndex = 68;
-            this.b_edit.Text = "OPEN FILE";
-            this.b_edit.UseVisualStyleBackColor = false;
-            // 
-            // dgv
-            // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn1});
-            this.dgv.Location = new System.Drawing.Point(11, 167);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(431, 150);
-            this.dgv.TabIndex = 70;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "RECORD\'S ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "PATIENT\'S NAME";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 325;
-            // 
-            // b_search
-            // 
-            this.b_search.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.b_search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b_search.BackgroundImage")));
-            this.b_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b_search.FlatAppearance.BorderSize = 0;
-            this.b_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.b_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_search.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_search.Location = new System.Drawing.Point(379, 96);
-            this.b_search.Name = "b_search";
-            this.b_search.Size = new System.Drawing.Size(35, 29);
-            this.b_search.TabIndex = 71;
-            this.b_search.UseVisualStyleBackColor = false;
-            this.b_search.Click += new System.EventHandler(this.b_search_Click);
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(429, 18);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(35, 29);
+            this.button2.TabIndex = 77;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // RECORDS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(921, 544);
+            this.ClientSize = new System.Drawing.Size(950, 544);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.b_create);
             this.Controls.Add(this.groupBox1);
@@ -383,6 +401,7 @@
             this.Name = "RECORDS";
             this.Text = "           ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RECORDS_FormClosing);
+            this.Load += new System.EventHandler(this.RECORDS_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -425,5 +444,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button b_search;
+        private System.Windows.Forms.Button button2;
     }
 }

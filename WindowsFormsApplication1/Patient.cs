@@ -106,8 +106,9 @@ namespace WindowsFormsApplication1
 
                     cb_name.Items.Clear();
                     cb_dent.Items.Clear();
-
-                    paciente.Search_Dentist_Patient(cb_dent, l_idDent.Text);
+                    string nombre = "";
+                    paciente.Search_Dentist_Patient(ref nombre, l_idDent.Text);
+                    cb_dent.Text = nombre;
                     paciente.Search_Name("DENTISTA", cb_dent);
                     paciente.Search_Name("PACIENTE", cb_name);
                     
