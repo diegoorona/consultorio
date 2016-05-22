@@ -217,11 +217,14 @@
             // 
             // dDate
             // 
-            this.dDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dDate.Location = new System.Drawing.Point(71, 95);
             this.dDate.Name = "dDate";
-            this.dDate.Size = new System.Drawing.Size(140, 20);
+            this.dDate.Size = new System.Drawing.Size(142, 20);
             this.dDate.TabIndex = 13;
+            this.dDate.Value = new System.DateTime(2016, 5, 22, 11, 53, 33, 0);
             // 
             // label8
             // 

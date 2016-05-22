@@ -105,3 +105,20 @@ C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsForm
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.RECORDS.resources
 C:\Users\Dante Glz\Documents\Visual Studio 2013\Projects\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.APPOINTMENT.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.DENTIST.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.login.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MAIN.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Patient.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PAYMENT.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.RECORDS.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SECRETARY.resources
+C:\Users\Diego\Documents\consultorio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
